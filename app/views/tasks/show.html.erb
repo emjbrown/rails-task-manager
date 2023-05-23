@@ -1,5 +1,9 @@
 <div class="container m-4">
-  <h1><%= @task.title %></h1>
+  <div class="d-flex justify-content-between mb-3">
+    <h1><%= @task.title %></h1>
+    <a class="btn btn-outline-secondary" href="<%= edit_task_path(@task) %>">Edit task</a>
+  </div>
+
   <p class="card p-3 bg-light"><%= @task.details %></p>
   <p>
     <% if @task.completed? %>
@@ -10,7 +14,7 @@
   </p>
 
   <p><%= link_to 'Back to list', tasks_path %></p>
-  <p><%= link_to 'Edit this task', edit_task_path(@task) %></p>
+  <%# <p><%= link_to 'Edit this task', edit_task_path(@task) </p> %>
   <p><%= link_to 'Delete',
        task_path(@task),
        data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></p>

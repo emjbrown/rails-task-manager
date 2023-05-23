@@ -1,7 +1,8 @@
- <%= form_with(model: task) do |f| %>
-  <%= f.label :title %>
+ <%= bootstrap_form_with(model: task) do |f| %>
+  <%# <%= f.label :title %>
   <%= f.text_field :title %>
-  <%= f.label :details %>
+  <%# <%= f.label :details %>
   <%= f.text_field :details %>
+  <%= f.check_box :completed %>
   <%= f.submit %>
  <% end %>
