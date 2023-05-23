@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   # Create (2 steps)
   get 'tasks/new', to: 'tasks#new', as: :new_task
+
+  # Form is passed an object with no id, so the form_with
+  # recognizes it should be a post request. Form_with looks at routes
+  # and finds the post url associated with task, then executes action
   post 'tasks', to: 'tasks#create'
 
   # Read one
