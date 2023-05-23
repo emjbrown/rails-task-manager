@@ -1,11 +1,13 @@
-<h1><%= @task.title %></h1>
-<p><em><%= @task.details %></em></p>
-<p>
-  <% if @task.completed? %>
-      [✔️] This task is completed
-    <% else %>
-      [ ] This task is not completed yet
-    <% end %>
-</p>
+<div class="container m-4">
+  <h1><%= @task.title %></h1>
+  <p class="card p-3 bg-light"><%= @task.details %></p>
+  <p>
+    <% if @task.completed? %>
+        [✔️] This task is completed
+      <% else %>
+        [ ] This task is not completed yet
+      <% end %>
+  </p>
 
-<%= link_to 'Back to list', tasks_path %>
+  <%= link_to 'Back to list', tasks_path %>
+</div>
