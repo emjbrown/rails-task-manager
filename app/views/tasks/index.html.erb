@@ -1,6 +1,8 @@
 <div class="container m-4">
   <h1>All Tasks</h1>
 
+  <p><%= link_to 'Add a task', new_task_path %></p>
+
   <ul>
     <% @tasks.each do |task| %>
       <% if task.completed? %>
